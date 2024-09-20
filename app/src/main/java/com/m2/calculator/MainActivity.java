@@ -18,7 +18,7 @@ public class MainActivity extends AppCompatActivity {
 
     private TextView output;
     private double a, b, result;
-    private String actionButton;
+    private String actionButton = "";
     private boolean isEqualLast = false;
 
     @Override
@@ -36,9 +36,7 @@ public class MainActivity extends AppCompatActivity {
             output.setText(pressedButton.getText());
             isEqualLast = false;
         } else {
-            if (pressedButton.getText().toString().equals(",") && output.getText().toString().contains(",")){
-
-            } else {
+            if (!pressedButton.getText().toString().equals(",") || !output.getText().toString().contains(",")) {
                 if (output.getText().toString().length() < 13) {
                     output.append(pressedButton.getText());
                 }
