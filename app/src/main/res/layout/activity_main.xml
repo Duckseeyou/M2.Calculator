@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/grey"
+    tools:ignore="HardcodedText"
+    tools:context=".MainActivity">
+
+
+    <LinearLayout
+
+        android:id="@+id/linear1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingLeft="15dp"
+        android:paddingBottom="50dp"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+
+        <com.google.android.material.button.MaterialButton
+            style="@style/Action.Button"
+            android:text="⬅"
+            />
+
+        <com.google.android.material.button.MaterialButton
+            style="@style/Number.Button"
+            android:text="0"
+
+            />
+        <com.google.android.material.button.MaterialButton
+            style="@style/Number.Button"
+            android:text=","
+
+            />
+        <com.google.android.material.button.MaterialButton
+            style="@style/Equal.Button"
+            android:text="="
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
+
+        android:id="@+id/linear2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingLeft="15dp"
+        android:paddingBottom="10dp"
+        app:layout_constraintBottom_toTopOf="@id/linear1">
+
+
+        <com.google.android.material.button.MaterialButton
+            style="@style/Number.Button"
+            android:text="1"
+            />
+
+        <com.google.android.material.button.MaterialButton
+            style="@style/Number.Button"
+            android:text="2"
+            />
+
+        <com.google.android.material.button.MaterialButton
+            style="@style/Number.Button"
+            android:text="3"
+            />
+
+        <com.google.android.material.button.MaterialButton
+            style="@style/Action.Button"
+            android:text="+"
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
+
+        android:id="@+id/linear3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingLeft="15dp"
+        android:paddingBottom="10dp"
+        app:layout_constraintBottom_toTopOf="@id/linear2">
+
+        <com.google.android.material.button.MaterialButton
+            style="@style/Number.Button"
+            android:text="4"
+            />
+
+        <com.google.android.material.button.MaterialButton
+            style="@style/Number.Button"
+            android:text="5"
+            />
+
+        <com.google.android.material.button.MaterialButton
+            style="@style/Number.Button"
+            android:text="6"
+            />
+
+        <com.google.android.material.button.MaterialButton
+            style="@style/Action.Button"
+            android:text="-"
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linear4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingLeft="15dp"
+        android:paddingBottom="10dp"
+        app:layout_constraintBottom_toTopOf="@id/linear3">
+
+
+        <com.google.android.material.button.MaterialButton
+            style="@style/Number.Button"
+            android:text="7"
+            />
+
+        <com.google.android.material.button.MaterialButton
+            style="@style/Number.Button"
+            android:text="8"
+            />
+
+        <com.google.android.material.button.MaterialButton
+            style="@style/Number.Button"
+            android:text="9"
+            />
+
+        <com.google.android.material.button.MaterialButton
+            style="@style/Action.Button"
+            android:text="×"
+            />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linear5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingLeft="15dp"
+        android:paddingBottom="10dp"
+        android:paddingStart="15dp"
+        app:layout_constraintBottom_toTopOf="@id/linear4">
+
+
+        <com.google.android.material.button.MaterialButton
+            style="@style/Action.Button"
+            android:textSize="26sp"
+            android:text="AC"
+
+            />
+
+        <com.google.android.material.button.MaterialButton
+            style="@style/Action.Button"
+            android:text="±" />
+
+        <com.google.android.material.button.MaterialButton
+            style="@style/Action.Button"
+            android:text="%" />
+
+        <com.google.android.material.button.MaterialButton
+            style="@style/Action.Button"
+            android:text="÷"
+            />
+
+
+    </LinearLayout>
+
+    <TextView
+        android:text="0"
+        android:id="@+id/output"
+        android:layout_width="wrap_content"
+        android:layout_height="80dp"
+        app:layout_constraintBottom_toTopOf="@id/linear5"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginBottom="30dp"
+        android:layout_marginEnd="20dp"
+        android:textSize="50sp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
