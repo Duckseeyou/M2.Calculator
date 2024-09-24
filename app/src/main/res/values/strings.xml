@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">Calculator</string>
+    <string-array name="types">
+        <item>Type</item>
+        <item>Type1</item>
+        <item>Type2</item>
+        <item>Type3</item>
+        <item>Type4</item>
+    </string-array>
+
 </resources>

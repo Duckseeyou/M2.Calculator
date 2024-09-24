@@ -1,5 +1,6 @@
 package com.m2.calculator;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -17,7 +18,7 @@ import com.google.android.material.snackbar.Snackbar;
 public class MainActivity extends AppCompatActivity {
 
     private TextView output;
-    private double a, b, result;
+    private double a, b, result = 0;
     private String actionButton = "";
     private boolean isEqualLast = false;
 
@@ -68,12 +69,16 @@ public class MainActivity extends AppCompatActivity {
                 actionButton = pressedButton.getText().toString();
                 break;
             case "±":
+                if (!output.getText().toString().equals("0") && !output.getText().toString().contains("-"))
                 output.setText("-" + output.getText().toString());
                 break;
         }
     }
     public void onEqualClick(View view){
-        b = Double.parseDouble(output.getText().toString().replace(',', '.'));
+        Button invisibleButton = findViewById(R.id.invisible_button);
+        if (!output.getText().toString().equals("Err")){
+            b = Double.parseDouble(output.getText().toString().replace(',', '.'));
+        }
         switch (actionButton) {
             case "+":
                 result = a + b;
@@ -88,21 +93,30 @@ public class MainActivity extends AppCompatActivity {
                 result = a / b;
                 break;
             case "":
-                result = Double.parseDouble(output.getText().toString());
+                result = Double.parseDouble(output.getText().toString().replace(',', '.'));
 
         }
         if(b != 0) {
             if (result % 1 == 0) {
-                output.setText(String.valueOf((int) result));
+                output.setText(String.valueOf(Math.round(result)));
             } else {
                 output.setText(String.valueOf(result).replace('.', ','));
             }
-        } else {
+            a = result;
+            isEqualLast = true;
+            actionButton = "";
+            b = 0;
+        } else if (b == 0 && result != 0){
             output.setText("Err");
         }
-        a = result;
-        isEqualLast = true;
-        actionButton = "";
-        b = 0;
+
+        invisibleButton.setVisibility(View.VISIBLE);
+
+    }
+
+    public void onInvisibleButtonClick(View view) {
+        Intent intent = new Intent(MainActivity.this, SecondActivity.class);
+        intent.putExtra("key1", result);
+        startActivity(intent);
     }
 }

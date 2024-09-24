@@ -11,7 +11,6 @@
 
 
     <LinearLayout
-
         android:id="@+id/linear1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -186,4 +185,18 @@
         android:layout_marginEnd="20dp"
         android:textSize="50sp" />
 
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/invisible_button"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:text="тык"
+        android:layout_margin="10dp"
+        android:visibility="gone"
+        android:backgroundTint="@color/orange"
+        android:onClick="onInvisibleButtonClick"
+        />
 </androidx.constraintlayout.widget.ConstraintLayout>
